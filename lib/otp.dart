@@ -1,4 +1,4 @@
-// ignore_for_file: avoid_print, sort_child_properties_last, deprecated_member_use
+// ignore_for_file: avoid_print, sort_child_properties_last, deprecated_member_use, prefer_const_constructors
 
 import 'package:flutter/material.dart';
 import 'package:pinput/pinput.dart';
@@ -104,7 +104,10 @@ class _MyOtpState extends State<MyOtp> {
               Row(
                 children: [
                   TextButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.pushNamedAndRemoveUntil(
+                          context, 'phone', (route) => false);
+                    },
                     child: const Text(
                       'Edit Phone Number?',
                       style: TextStyle(
